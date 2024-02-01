@@ -7,4 +7,10 @@
     <string name="profile_icon">Профиль</string>
     <string name="profile_title">Личный кабинет</string>
     <string name="favourite_title">Избранное</string>
+    <string name="button_vhod">Войти</string>
+    <string name="hint_phone">Номер телефона</string>
+    <string name="hint_last_name">Фамилия</string>
+    <string name="hint_first_name">Имя</string>
+    <string name="loyal_prog">Нажимая кнопку \"Войти\", Вы принимаете \nусловия программы лояльности</string>
+    <string name="title_vhod">Вход</string>
 </resources>
