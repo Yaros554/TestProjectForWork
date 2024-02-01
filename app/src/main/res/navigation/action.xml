@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/action"
+    app:startDestination="@id/actionFragment">
+
+    <fragment
+        android:id="@+id/actionFragment"
+        android:name="com.skyyaros.android.testprojectforwork.ui.ActionFragment"
+        android:label="ActionFragment"
+        tools:layout="@layout/action_fragment"/>
+</navigation>

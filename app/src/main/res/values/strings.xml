@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">TestProjectForWork</string>
+    <string name="home_icon">Главная</string>
+    <string name="catalog_icon">Каталог</string>
+    <string name="bag_icon">Корзина</string>
+    <string name="action_icon">Акции</string>
+    <string name="profile_icon">Профиль</string>
+    <string name="profile_title">Личный кабинет</string>
+    <string name="favourite_title">Избранное</string>
+</resources>

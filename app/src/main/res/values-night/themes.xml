@@ -1,0 +1,20 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.TestProjectForWork" parent="Theme.MaterialComponents.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/black_pink</item>
+        <item name="colorPrimaryVariant">@color/black_pink</item>
+        <item name="colorOnPrimary">@color/black</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/black_pink</item>
+        <item name="colorSecondaryVariant">@color/black_pink</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Прочие цвета -->
+        <item name="android:colorBackground">@color/user_black</item>
+        <item name="colorSurface">@color/user_black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?android:attr/colorBackground</item>
+        <!-- Customize your theme here. -->
+        <item name="android:navigationBarColor">?android:attr/colorBackground</item>
+    </style>
+</resources>
