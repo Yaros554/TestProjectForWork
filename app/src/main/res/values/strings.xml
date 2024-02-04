@@ -13,4 +13,20 @@
     <string name="hint_first_name">Имя</string>
     <string name="loyal_prog">Нажимая кнопку \"Войти\", Вы принимаете \nусловия программы лояльности</string>
     <string name="title_vhod">Вход</string>
+    <string name="shops">Магазины</string>
+    <string name="oferta">Оферта</string>
+    <string name="obr_sv">Обратная связь</string>
+    <string name="back_tovar">Возврат товара</string>
+    <string name="away">Выйти</string>
+    <string name="get_data">Получение данных</string>
+    <string name="no_fav">Список избранного пуст</string>
+    <string name="see_all">Смотреть все</string>
+    <string name="face">Лицо</string>
+    <string name="body">Тело</string>
+    <string name="zagar">Загар</string>
+    <string name="mask">Маски</string>
+    <string name="popular">По популярности</string>
+    <string name="min_price">По уменьшению цены</string>
+    <string name="max_price">По возрастанию цены</string>
+    <string name="filters">Фильтры</string>
 </resources>

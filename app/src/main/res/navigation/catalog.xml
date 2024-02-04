@@ -18,5 +18,9 @@
         android:id="@+id/productFragment"
         android:name="com.skyyaros.android.testprojectforwork.ui.ProductFragment"
         android:label="ProductFragment"
-        tools:layout="@layout/product_fragment"/>
+        tools:layout="@layout/product_fragment">
+        <argument
+            android:name="product"
+            app:argType="com.skyyaros.android.testprojectforwork.entity.ProductWithPhoto" />
+    </fragment>
 </navigation>

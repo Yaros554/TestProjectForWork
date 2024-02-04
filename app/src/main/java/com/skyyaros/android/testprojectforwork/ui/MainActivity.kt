@@ -16,6 +16,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.skyyaros.android.testprojectforwork.App
 import com.skyyaros.android.testprojectforwork.R
 import com.skyyaros.android.testprojectforwork.databinding.ActivityMainBinding
+import com.skyyaros.android.testprojectforwork.entity.ProductWithPhoto
 import com.skyyaros.android.testprojectforwork.entity.UserInfo
 import kotlinx.coroutines.flow.StateFlow
 
@@ -91,5 +92,21 @@ class MainActivity : AppCompatActivity(), ActivityCallbacks {
 
     override fun getUsers(): StateFlow<List<UserInfo>> {
         return viewModel.usersFlow
+    }
+
+    override fun getFavs(): StateFlow<List<ProductWithPhoto>> {
+        return viewModel.favsFlow
+    }
+
+    override fun getFavsId(): StateFlow<List<String>> {
+        return viewModel.favsIdFlow
+    }
+
+    override fun addFav(newFav: ProductWithPhoto) {
+        viewModel.addFav(newFav)
+    }
+
+    override fun deleteFav(fav: ProductWithPhoto) {
+        viewModel.deleteFav(fav)
     }
 }

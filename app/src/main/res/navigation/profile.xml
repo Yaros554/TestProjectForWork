@@ -18,5 +18,18 @@
         android:id="@+id/favouriteFragment"
         android:name="com.skyyaros.android.testprojectforwork.ui.FavouriteFragment"
         android:label="FavouriteFragment"
-        tools:layout="@layout/favourite_fragment"/>
+        tools:layout="@layout/favourite_fragment" >
+        <action
+            android:id="@+id/action_favouriteFragment_to_productFragment"
+            app:destination="@id/productFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/productFragment"
+        android:name="com.skyyaros.android.testprojectforwork.ui.ProductFragment"
+        android:label="ProductFragment"
+        tools:layout="@layout/product_fragment">
+        <argument
+            android:name="product"
+            app:argType="com.skyyaros.android.testprojectforwork.entity.ProductWithPhoto" />
+    </fragment>
 </navigation>
