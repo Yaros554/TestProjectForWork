@@ -1,18 +1,282 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/errorText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="24sp"
-        android:text="Здесь будет описание товара"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/parentLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imageLike"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                tools:src="@drawable/unlike"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/viewPager"
+                android:layout_width="match_parent"
+                android:layout_height="320dp"
+                app:layout_constraintTop_toBottomOf="@id/imageLike" />
+
+            <ImageView
+                android:id="@+id/imageVopros"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:src="@drawable/vopros"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/viewPager" />
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                app:tabIndicatorColor="?android:attr/colorBackground"
+                app:layout_constraintTop_toBottomOf="@id/imageVopros" />
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="APPLE"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tabs" />
+
+            <TextView
+                android:id="@+id/subtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                tools:text="Пенка для умывания 200 мл Apple Deep clean comfort"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/title" />
+
+            <TextView
+                android:id="@+id/available"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                tools:text="Доступно для заказа 30 штук"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/subtitle" />
+
+            <ImageView
+                android:id="@+id/rating1"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:scaleType="centerCrop"
+                tools:src="@drawable/full_zvezda"
+                android:layout_marginTop="4dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/available" />
+
+            <ImageView
+                android:id="@+id/rating2"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:scaleType="centerCrop"
+                tools:src="@drawable/full_zvezda"
+                android:layout_marginStart="4dp"
+                app:layout_constraintStart_toEndOf="@id/rating1"
+                app:layout_constraintTop_toTopOf="@id/rating1"
+                app:layout_constraintBottom_toBottomOf="@id/rating1"/>
+
+            <ImageView
+                android:id="@+id/rating3"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:scaleType="centerCrop"
+                tools:src="@drawable/full_zvezda"
+                android:layout_marginStart="4dp"
+                app:layout_constraintStart_toEndOf="@id/rating2"
+                app:layout_constraintTop_toTopOf="@id/rating1"
+                app:layout_constraintBottom_toBottomOf="@id/rating1"/>
+
+            <ImageView
+                android:id="@+id/rating4"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:scaleType="centerCrop"
+                tools:src="@drawable/half_zvezda"
+                android:layout_marginStart="4dp"
+                app:layout_constraintStart_toEndOf="@id/rating3"
+                app:layout_constraintTop_toTopOf="@id/rating1"
+                app:layout_constraintBottom_toBottomOf="@id/rating1"/>
+
+            <ImageView
+                android:id="@+id/rating5"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:scaleType="centerCrop"
+                tools:src="@drawable/empty_zvezda"
+                android:layout_marginStart="4dp"
+                app:layout_constraintStart_toEndOf="@id/rating4"
+                app:layout_constraintTop_toTopOf="@id/rating1"
+                app:layout_constraintBottom_toBottomOf="@id/rating1"/>
+
+            <TextView
+                android:id="@+id/ratingText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="4.3"
+                android:layout_marginStart="4dp"
+                app:layout_constraintStart_toEndOf="@id/rating5"
+                app:layout_constraintTop_toTopOf="@id/rating1"
+                app:layout_constraintBottom_toBottomOf="@id/rating1"/>
+
+            <TextView
+                android:id="@+id/countOtz"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="4 отзыва"
+                android:layout_marginStart="8dp"
+                app:layout_constraintStart_toEndOf="@id/ratingText"
+                app:layout_constraintTop_toTopOf="@id/rating1"
+                app:layout_constraintBottom_toBottomOf="@id/rating1"/>
+
+            <TextView
+                android:id="@+id/new_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                tools:text="549 R"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rating1" />
+
+            <TextView
+                android:id="@+id/old_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="800 R"
+                android:layout_marginStart="8dp"
+                app:layout_constraintStart_toEndOf="@id/new_price"
+                app:layout_constraintTop_toTopOf="@id/new_price"
+                app:layout_constraintBottom_toBottomOf="@id/new_price"/>
+
+            <TextView
+                android:id="@+id/discount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="-50%"
+                android:layout_marginStart="8dp"
+                app:layout_constraintStart_toEndOf="@id/old_price"
+                app:layout_constraintTop_toTopOf="@id/new_price"
+                app:layout_constraintBottom_toBottomOf="@id/new_price"/>
+
+            <TextView
+                android:id="@+id/opis"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:text="@string/opis"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/new_price" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buttonBrand"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="Apple"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@id/opis" />
+
+            <TextView
+                android:id="@+id/textDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="Это очень длинный текст с несколькими строчками, множеством букв, содержащих описание товара в магазине"
+                app:layout_constraintTop_toBottomOf="@id/buttonBrand" />
+
+            <TextView
+                android:id="@+id/hide_show_opis"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Скрыть"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textDescription" />
+
+            <TextView
+                android:id="@+id/param"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:text="@string/param"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/hide_show_opis" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/param_item"
+                app:layout_constraintTop_toBottomOf="@id/param"
+                android:layout_marginTop="8dp"/>
+
+            <ImageView
+                android:id="@+id/imageCopy"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/copy"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/recycler" />
+
+            <TextView
+                android:id="@+id/sostav"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:text="@string/sostav"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/imageCopy"
+                app:layout_constraintBottom_toBottomOf="@id/imageCopy"/>
+
+            <TextView
+                android:id="@+id/sostav_podr"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="Подробный состав"
+                app:layout_constraintTop_toBottomOf="@id/imageCopy" />
+
+            <TextView
+                android:id="@+id/hide_show_sostav"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Подробнее"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/sostav_podr" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/add_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/add_to_bag"
+                app:layout_constraintTop_toBottomOf="@id/hide_show_sostav" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</FrameLayout>

@@ -7,7 +7,7 @@ import kotlinx.coroutines.flow.StateFlow
 interface ActivityCallbacks {
     fun showDownBar()
     fun hideDownBar()
-    fun editUpBar(label: String, isRoot: Boolean)
+    fun editUpBar(label: String, isRoot: Boolean, showSend: Boolean = false)
     fun getUsers(): StateFlow<List<UserInfo>>
     fun getFavs(): StateFlow<List<ProductWithPhoto>>
     fun getFavsId(): StateFlow<List<String>>

@@ -2,7 +2,10 @@ package com.skyyaros.android.testprojectforwork.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Gravity
 import android.view.View
+import android.widget.FrameLayout
+import android.widget.TextView
 import androidx.activity.viewModels
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
@@ -83,11 +86,20 @@ class MainActivity : AppCompatActivity(), ActivityCallbacks {
         binding.bottomNav.visibility = View.GONE
     }
 
-    override fun editUpBar(label: String, isRoot: Boolean) {
+    override fun editUpBar(label: String, isRoot: Boolean, showSend: Boolean) {
         binding.toolbar.title = ""
         binding.toolbarTitle.text = label
-        if (!isRoot)
+        if (!isRoot) {
             binding.toolbar.setNavigationIcon(R.drawable.icon_back)
+            binding.toolbarTitle.gravity = Gravity.START
+        } else {
+            binding.toolbarTitle.gravity = Gravity.CENTER
+        }
+        if (showSend) {
+            binding.sendImage.visibility = View.VISIBLE
+        } else {
+            binding.sendImage.visibility = View.GONE
+        }
     }
 
     override fun getUsers(): StateFlow<List<UserInfo>> {

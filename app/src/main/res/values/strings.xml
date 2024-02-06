@@ -29,4 +29,10 @@
     <string name="min_price">По уменьшению цены</string>
     <string name="max_price">По возрастанию цены</string>
     <string name="filters">Фильтры</string>
+    <string name="opis">Описание</string>
+    <string name="param">Характеристики</string>
+    <string name="sostav">Состав</string>
+    <string name="add_to_bag">Добавить в корзину</string>
+    <string name="podr">Подробнее</string>
+    <string name="hide">Скрыть</string>
 </resources>

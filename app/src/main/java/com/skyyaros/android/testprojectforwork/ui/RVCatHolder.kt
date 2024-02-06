@@ -17,6 +17,9 @@ class RVCatHolder(private val binding: ProductItemBinding, private val context: 
         binding.title.text = product.title
         binding.subtitle.text = product.subtitle
         if (product.feedback != null) {
+            binding.textRating.visibility = View.VISIBLE
+            binding.imageRating.visibility = View.VISIBLE
+            binding.countOtz.visibility = View.VISIBLE
             binding.textRating.text = product.feedback.rating.toString()
             binding.countOtz.text = "(${product.feedback.count})"
         } else {
@@ -24,7 +27,7 @@ class RVCatHolder(private val binding: ProductItemBinding, private val context: 
             binding.imageRating.visibility = View.GONE
             binding.countOtz.visibility = View.GONE
         }
-        val adapter = VPCatAdapter(product.imgUrl!!)
+        val adapter = VPCatAdapter(product.imgUrl)
         binding.viewPager.adapter = adapter
         TabLayoutMediator(binding.tabs, binding.viewPager) { tab, _ ->
             tab.icon = context.getDrawable(R.drawable.pagination)
