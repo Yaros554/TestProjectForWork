@@ -12,7 +12,7 @@ android {
 
     defaultConfig {
         applicationId "com.skyyaros.android.testprojectforwork"
-        minSdk 24
+        minSdk 23
         targetSdk 33
         versionCode 1
         versionName "1.0"
@@ -53,6 +53,7 @@ dependencies {
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1"
     implementation 'com.google.code.gson:gson:2.10.1'
+    implementation 'com.hbb20:ccp:2.7.0'
 
     implementation 'androidx.room:room-runtime:2.5.2'
     implementation 'androidx.room:room-ktx:2.5.2'

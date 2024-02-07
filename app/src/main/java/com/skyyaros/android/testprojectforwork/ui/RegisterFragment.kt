@@ -2,6 +2,10 @@ package com.skyyaros.android.testprojectforwork.ui
 
 import android.content.Context
 import android.os.Bundle
+import android.text.Editable
+import android.text.SpannableString
+import android.text.TextWatcher
+import android.text.style.UnderlineSpan
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -15,7 +19,7 @@ import com.skyyaros.android.testprojectforwork.App
 import com.skyyaros.android.testprojectforwork.R
 import com.skyyaros.android.testprojectforwork.databinding.RegistrFragmentBinding
 import com.skyyaros.android.testprojectforwork.entity.UserInfo
-import kotlinx.coroutines.flow.collect
+
 
 class RegisterFragment: Fragment() {
     private var _bind: RegistrFragmentBinding? = null
@@ -61,9 +65,23 @@ class RegisterFragment: Fragment() {
             viewModel.saveUser(UserInfo(
                 bind.editTextFirstName.text.toString(),
                 bind.editTextLastName.text.toString(),
-                bind.editTextPhone.text.toString()
+                bind.ccp.formattedFullNumber!!
             ))
         }
+        bind.ccp.registerCarrierNumberEditText(bind.editTextPhone)
+        bind.editTextFirstName.addTextChangedListener(TextFieldValidation(bind.textFirstName))
+        bind.editTextLastName.addTextChangedListener(TextFieldValidation(bind.textLastName))
+        bind.ccp.setPhoneNumberValidityChangeListener { isValid ->
+            viewModel.inputPhone(isValid)
+        }
+        viewLifecycleOwner.lifecycleScope.launchWhenStarted {
+            viewModel.validRegisterStateFlow.collect { valid ->
+                bind.button.isEnabled = valid
+            }
+        }
+        val content = SpannableString(getString(R.string.loyal_prog))
+        content.setSpan(UnderlineSpan(), content.indexOfFirst { it == '\n' }, content.length, 0)
+        bind.loyalProgText.text = content
     }
 
     override fun onDestroyView() {
@@ -74,5 +92,51 @@ class RegisterFragment: Fragment() {
     override fun onDetach() {
         activityCallbacks = null
         super.onDetach()
+    }
+
+    private fun validateUserName(isFirstName: Boolean) {
+        val curText = if (isFirstName) bind.editTextFirstName.text.toString() else bind.editTextLastName.text.toString()
+        var isValid = true
+        curText.forEach {
+            isValid = isValid && ((it in 'а'..'я') || (it in 'А'..'Я'))
+        }
+        if (isFirstName) {
+            if (isValid) {
+                bind.textFirstName.isErrorEnabled = false
+                if (bind.editTextFirstName.text.toString().isNotEmpty())
+                    viewModel.inputFirst(true)
+                else
+                    viewModel.inputFirst(false)
+            } else {
+                bind.textFirstName.error = getString(R.string.bad_letter)
+                viewModel.inputFirst(false)
+            }
+        } else {
+            if (isValid) {
+                bind.textLastName.isErrorEnabled = false
+                if (bind.editTextLastName.text.toString().isNotEmpty())
+                    viewModel.inputLast(true)
+                else
+                    viewModel.inputLast(false)
+            } else {
+                bind.textLastName.error = getString(R.string.bad_letter)
+                viewModel.inputLast(false)
+            }
+        }
+    }
+
+    inner class TextFieldValidation(private val view: View) : TextWatcher {
+        override fun afterTextChanged(s: Editable?) {}
+        override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+        override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+            when (view.id) {
+                R.id.textFirstName -> {
+                    validateUserName(true)
+                }
+                else -> {
+                    validateUserName(false)
+                }
+            }
+        }
     }
 }

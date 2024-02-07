@@ -13,18 +13,25 @@
 
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="50dp"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
-            android:layout_marginTop="32dp"
-            android:background="@color/white_on_white" >
+            android:layout_marginTop="32dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:backgroundTint="@color/light_grey"
+                app:cornerRadius="8dp"
+                android:layout_gravity="center"/>
 
             <ImageView
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:src="@drawable/profile_icon"
                 android:layout_marginStart="8dp"
-                android:layout_gravity="center_vertical|start" />
+                android:layout_gravity="center_vertical|start"
+                android:elevation="10dp"/>
 
             <TextView
                 android:id="@+id/userName"
@@ -34,16 +41,21 @@
                 android:textStyle="bold"
                 tools:text="Мария Иванова"
                 android:layout_gravity="top|start"
-                android:layout_marginStart="44dp" />
+                android:layout_marginStart="44dp"
+                android:layout_marginTop="5dp"
+                android:elevation="10dp"/>
 
             <TextView
                 android:id="@+id/userPhone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="12sp"
+                android:textColor="@color/grey"
                 tools:text="+7 911 123-45-67"
                 android:layout_gravity="bottom|start"
-                android:layout_marginStart="44dp" />
+                android:layout_marginStart="44dp"
+                android:layout_marginBottom="5dp"
+                android:elevation="10dp"/>
 
             <ImageView
                 android:layout_width="25dp"
@@ -52,25 +64,33 @@
                 android:layout_marginEnd="8dp"
                 android:focusable="true"
                 android:clickable="true"
-                android:layout_gravity="center_vertical|end" />
+                android:layout_gravity="center_vertical|end"
+                android:elevation="10dp"/>
 
         </FrameLayout>
 
         <FrameLayout
-            android:id="@+id/frameFav"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="50dp"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
-            android:layout_marginTop="32dp"
-            android:background="@color/white_on_white" >
+            android:layout_marginTop="28dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button_fav"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:backgroundTint="@color/light_grey"
+                app:cornerRadius="8dp"
+                android:layout_gravity="center"/>
 
             <ImageView
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:src="@drawable/unlike"
                 android:layout_marginStart="8dp"
-                android:layout_gravity="center_vertical|start" />
+                android:layout_gravity="center_vertical|start"
+                android:elevation="10dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -79,16 +99,21 @@
                 android:textStyle="bold"
                 android:text="@string/favourite_title"
                 android:layout_gravity="top|start"
-                android:layout_marginStart="44dp" />
+                android:layout_marginStart="44dp"
+                android:layout_marginTop="5dp"
+                android:elevation="10dp"/>
 
             <TextView
                 android:id="@+id/count_fav"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="12sp"
+                android:textColor="@color/grey"
                 tools:text="1 товар"
                 android:layout_gravity="bottom|start"
-                android:layout_marginStart="44dp" />
+                android:layout_marginStart="44dp"
+                android:layout_marginBottom="5dp"
+                android:elevation="10dp"/>
 
             <ImageView
                 android:layout_width="25dp"
@@ -97,24 +122,32 @@
                 android:layout_marginEnd="8dp"
                 android:focusable="true"
                 android:clickable="true"
-                android:layout_gravity="center_vertical|end" />
+                android:layout_gravity="center_vertical|end"
+                android:elevation="10dp"/>
 
         </FrameLayout>
 
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="50dp"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
-            android:layout_marginTop="16dp"
-            android:background="@color/white_on_white" >
+            android:layout_marginTop="11dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:backgroundTint="@color/light_grey"
+                app:cornerRadius="8dp"
+                android:layout_gravity="center"/>
 
             <ImageView
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:src="@drawable/shop"
                 android:layout_marginStart="8dp"
-                android:layout_gravity="center_vertical|start" />
+                android:layout_gravity="center_vertical|start"
+                android:elevation="10dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -123,7 +156,9 @@
                 android:textStyle="bold"
                 android:text="@string/shops"
                 android:layout_gravity="top|start"
-                android:layout_marginStart="44dp" />
+                android:layout_marginStart="44dp"
+                android:layout_marginTop="5dp"
+                android:elevation="10dp"/>
 
             <ImageView
                 android:layout_width="25dp"
@@ -132,24 +167,32 @@
                 android:layout_marginEnd="8dp"
                 android:focusable="true"
                 android:clickable="true"
-                android:layout_gravity="center_vertical|end" />
+                android:layout_gravity="center_vertical|end"
+                android:elevation="10dp"/>
 
         </FrameLayout>
 
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="50dp"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
-            android:layout_marginTop="16dp"
-            android:background="@color/white_on_white" >
+            android:layout_marginTop="11dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:backgroundTint="@color/light_grey"
+                app:cornerRadius="8dp"
+                android:layout_gravity="center"/>
 
             <ImageView
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:src="@drawable/message"
                 android:layout_marginStart="8dp"
-                android:layout_gravity="center_vertical|start" />
+                android:layout_gravity="center_vertical|start"
+                android:elevation="10dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -158,7 +201,9 @@
                 android:textStyle="bold"
                 android:text="@string/obr_sv"
                 android:layout_gravity="top|start"
-                android:layout_marginStart="44dp" />
+                android:layout_marginStart="44dp"
+                android:layout_marginTop="5dp"
+                android:elevation="10dp"/>
 
             <ImageView
                 android:layout_width="25dp"
@@ -167,24 +212,32 @@
                 android:layout_marginEnd="8dp"
                 android:focusable="true"
                 android:clickable="true"
-                android:layout_gravity="center_vertical|end" />
+                android:layout_gravity="center_vertical|end"
+                android:elevation="10dp"/>
 
         </FrameLayout>
 
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="50dp"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
-            android:layout_marginTop="16dp"
-            android:background="@color/white_on_white" >
+            android:layout_marginTop="11dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:backgroundTint="@color/light_grey"
+                app:cornerRadius="8dp"
+                android:layout_gravity="center"/>
 
             <ImageView
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:src="@drawable/oferta"
                 android:layout_marginStart="8dp"
-                android:layout_gravity="center_vertical|start" />
+                android:layout_gravity="center_vertical|start"
+                android:elevation="10dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -193,7 +246,9 @@
                 android:textStyle="bold"
                 android:text="@string/oferta"
                 android:layout_gravity="top|start"
-                android:layout_marginStart="44dp" />
+                android:layout_marginStart="44dp"
+                android:layout_marginTop="5dp"
+                android:elevation="10dp"/>
 
             <ImageView
                 android:layout_width="25dp"
@@ -202,24 +257,32 @@
                 android:layout_marginEnd="8dp"
                 android:focusable="true"
                 android:clickable="true"
-                android:layout_gravity="center_vertical|end" />
+                android:layout_gravity="center_vertical|end"
+                android:elevation="10dp"/>
 
         </FrameLayout>
 
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="40dp"
+            android:layout_height="50dp"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
-            android:layout_marginTop="16dp"
-            android:background="@color/white_on_white" >
+            android:layout_marginTop="11dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:backgroundTint="@color/light_grey"
+                app:cornerRadius="8dp"
+                android:layout_gravity="center"/>
 
             <ImageView
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 android:src="@drawable/return_tovar"
                 android:layout_marginStart="8dp"
-                android:layout_gravity="center_vertical|start" />
+                android:layout_gravity="center_vertical|start"
+                android:elevation="10dp"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -228,7 +291,9 @@
                 android:textStyle="bold"
                 android:text="@string/back_tovar"
                 android:layout_gravity="top|start"
-                android:layout_marginStart="44dp" />
+                android:layout_marginStart="44dp"
+                android:layout_marginTop="5dp"
+                android:elevation="10dp"/>
 
             <ImageView
                 android:layout_width="25dp"
@@ -237,19 +302,23 @@
                 android:layout_marginEnd="8dp"
                 android:focusable="true"
                 android:clickable="true"
-                android:layout_gravity="center_vertical|end" />
+                android:layout_gravity="center_vertical|end"
+                android:elevation="10dp"/>
 
         </FrameLayout>
 
     </LinearLayout>
 
-    <TextView
+    <com.google.android.material.button.MaterialButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:focusable="true"
-        android:clickable="true"
+        app:cornerRadius="8dp"
+        app:backgroundTint="@color/light_grey"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
         android:textColor="@color/black"
         android:textStyle="bold"
+        android:textAllCaps="false"
         android:text="@string/away"
         android:layout_gravity="center|bottom"
         android:layout_marginBottom="48dp"/>

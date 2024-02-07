@@ -65,6 +65,23 @@ class FavouriteFragment: Fragment() {
             }
         })
         bind.recycler.adapter = adapter
+        val itemMargin = AdaptiveSpacingItemDecoration(resources.getDimension(R.dimen.small_margin).toInt(), true)
+        if (bind.recycler.itemDecorationCount == 0) {
+            bind.recycler.addItemDecoration(itemMargin)
+        }
+        bind.chipProduct.setOnClickListener {
+            bind.chipProduct.isChecked = true
+            bind.chipBrand.isChecked = false
+            bind.textView.visibility = View.GONE
+            bind.recycler.visibility = View.VISIBLE
+        }
+        bind.chipBrand.setOnClickListener {
+            bind.chipProduct.isChecked = false
+            bind.chipBrand.isChecked = true
+            bind.textView.visibility = View.VISIBLE
+            bind.textView.text = getString(R.string.no_fav)
+            bind.recycler.visibility = View.GONE
+        }
         viewLifecycleOwner.lifecycleScope.launchWhenStarted {
             activityCallbacks!!.getFavs().collect { favs->
                 if (favs.isEmpty()) {

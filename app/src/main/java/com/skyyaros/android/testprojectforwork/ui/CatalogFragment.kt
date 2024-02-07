@@ -102,6 +102,10 @@ class CatalogFragment: Fragment() {
             }
         })
         bind.recycler.adapter = adapter
+        val itemMargin = AdaptiveSpacingItemDecoration(resources.getDimension(R.dimen.small_margin).toInt(), true)
+        if (bind.recycler.itemDecorationCount == 0) {
+            bind.recycler.addItemDecoration(itemMargin)
+        }
         viewLifecycleOwner.lifecycleScope.launchWhenStarted {
            combine(
                viewModel.productStateFlow, activityCallbacks!!.getFavsId(),

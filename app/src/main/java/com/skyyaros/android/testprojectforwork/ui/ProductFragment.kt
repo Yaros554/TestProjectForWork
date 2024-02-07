@@ -3,6 +3,7 @@ package com.skyyaros.android.testprojectforwork.ui
 import android.animation.LayoutTransition
 import android.content.Context
 import android.content.res.Configuration
+import android.graphics.Paint
 import android.os.Bundle
 import android.text.TextUtils
 import android.view.LayoutInflater
@@ -85,6 +86,9 @@ class ProductFragment: Fragment() {
         val adapterParam = ParamAdapter(product.listDopInfo)
         bind.recycler.adapter = adapterParam
         setupIng(product)
+        bind.newPriceOnButton.text = product.price.priceWithDiscount.toString() + product.price.unit
+        bind.oldPriceOnButton.text = product.price.price.toString() + product.price.unit
+        bind.oldPriceOnButton.paintFlags = bind.oldPriceOnButton.paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
         viewLifecycleOwner.lifecycleScope.launchWhenStarted {
             activityCallbacks!!.getFavsId().collect {
                 if (it.contains(product.id)) {

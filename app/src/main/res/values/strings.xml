@@ -35,4 +35,8 @@
     <string name="add_to_bag">Добавить в корзину</string>
     <string name="podr">Подробнее</string>
     <string name="hide">Скрыть</string>
+    <string name="bad_letter">Недопустимый символ!</string>
+    <string name="bad_phone">Некорректный номер!</string>
+    <string name="products">Товары</string>
+    <string name="brands">Бренды</string>
 </resources>

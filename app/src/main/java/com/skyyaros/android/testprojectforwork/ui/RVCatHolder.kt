@@ -1,6 +1,7 @@
 package com.skyyaros.android.testprojectforwork.ui
 
 import android.content.Context
+import android.graphics.Paint
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.tabs.TabLayoutMediator
@@ -12,6 +13,7 @@ import com.skyyaros.android.testprojectforwork.entity.ProductWithPhoto
 class RVCatHolder(private val binding: ProductItemBinding, private val context: Context): RecyclerView.ViewHolder(binding.root) {
     fun bind(product: ProductWithFav) {
         binding.oldPrice.text = "${product.price.price} ${product.price.unit}"
+        binding.oldPrice.paintFlags = binding.oldPrice.paintFlags or Paint.STRIKE_THRU_TEXT_FLAG
         binding.newPrice.text = "${product.price.priceWithDiscount} ${product.price.unit}"
         binding.discount.text = "-${product.price.discount}%"
         binding.title.text = product.title

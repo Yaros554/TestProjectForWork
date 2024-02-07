@@ -11,21 +11,24 @@
         android:layout_height="30dp"
         android:src="@drawable/sort"
         android:layout_marginStart="8dp"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="@id/menu"
+        app:layout_constraintBottom_toBottomOf="@id/menu"
         app:layout_constraintStart_toStartOf="parent" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/menu"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeWidthFocused="0dp"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="@id/filterImage"
-        app:layout_constraintBottom_toBottomOf="@id/filterImage"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toEndOf="@id/filterImage">
 
         <AutoCompleteTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textSize="14sp"
             android:inputType="none" />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -36,8 +39,8 @@
         android:layout_height="wrap_content"
         android:text="@string/filters"
         android:layout_marginEnd="8dp"
-        app:layout_constraintTop_toTopOf="@id/filterImage"
-        app:layout_constraintBottom_toBottomOf="@id/filterImage"
+        app:layout_constraintTop_toTopOf="@id/menu"
+        app:layout_constraintBottom_toBottomOf="@id/menu"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <ImageView
@@ -46,8 +49,8 @@
         android:layout_height="30dp"
         android:src="@drawable/filter"
         android:layout_marginStart="8dp"
-        app:layout_constraintTop_toTopOf="@id/filterImage"
-        app:layout_constraintBottom_toBottomOf="@id/filterImage"
+        app:layout_constraintTop_toTopOf="@id/menu"
+        app:layout_constraintBottom_toBottomOf="@id/menu"
         app:layout_constraintEnd_toStartOf="@id/filters" />
 
     <HorizontalScrollView
@@ -55,6 +58,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/filterImage"
+        android:layout_marginTop="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp">
         <com.google.android.material.chip.ChipGroup

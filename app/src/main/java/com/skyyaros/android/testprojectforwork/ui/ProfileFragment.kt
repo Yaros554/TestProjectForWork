@@ -56,7 +56,7 @@ class ProfileFragment: Fragment() {
                 }
             }
         }
-        bind.frameFav.setOnClickListener {
+        bind.buttonFav.setOnClickListener {
             val action = ProfileFragmentDirections.actionProfileFragmentToFavouriteFragment()
             findNavController().navigate(action)
         }

@@ -5,6 +5,34 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <LinearLayout
+        android:id="@+id/chips"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/chips_background"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp">
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip_product"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:checked="true"
+            android:textAlignment="center"
+            android:text="@string/products" />
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chip_brand"
+            style="@style/Widget.MaterialComponents.Chip.Choice"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:textAlignment="center"
+            android:text="@string/brands" />
+    </LinearLayout>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler"
         android:layout_width="match_parent"
@@ -12,7 +40,7 @@
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:spanCount="2"
         tools:listitem="@layout/product_item"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/chips"
         app:layout_constraintBottom_toBottomOf="parent" />
 
     <TextView
